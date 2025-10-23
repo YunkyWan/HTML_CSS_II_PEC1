@@ -6,8 +6,10 @@
  /**
  * Import dependencies
  */
+@use "variables" as *;
 @use "dependencies";
-
+@use "components" as *;
+@use "utilities" as *;
 /**
  * Import layouts
  * It's a best practice to use a different partial for each page
@@ -18,3 +20,15 @@
 /**
  * Do NOT include anything else in this file!
  */
+
+/**
+// Componentes (BEM)
+@use "components/hero";
+@use "components/card";
+@use "components/footer";
+@use "components/nav";
+@use "components/section";
+
+// Utilidades
+@use "utilities/helpers";
+*/

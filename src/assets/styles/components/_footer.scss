@@ -1,0 +1,44 @@
+@use "../variables" as *;
+@use "../utilities/functions" as *;
+@use "../utilities/mixins" as *;
+
+.c-footer {
+  background-color: $ipsi-corporate;
+  color: #fff;
+  padding: clamp(1.5rem, 5vw, 1.5rem) 0;
+
+  &__inner {
+    @include container;                              /* mixin */
+    display: flex; flex-direction: column; gap: $space-4;
+    align-items: center; text-align: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row; justify-content: space-between; text-align: left;
+    }
+  }
+
+  &__text { margin: 0; line-height: 1.4; }
+
+  &__links {
+    list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: $space-4; margin: 0; padding: 0;
+  }
+
+  &__link {
+    color: #fff; text-decoration: none; position: relative; transition: color 160ms ease;
+
+    &::after {
+      content: ""; position: absolute; left: 0; bottom: -2px; width: 100%; height: 2px;
+      background-color: $ipsi-masterbrand; transform: scaleX(0); transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $ipsi-masterbrand;
+      &::after { transform: scaleX(1); }
+    }
+
+    &:focus-visible { outline: 2px solid $ipsi-masterbrand; outline-offset: 4px; border-radius: 2px; }
+  }
+}

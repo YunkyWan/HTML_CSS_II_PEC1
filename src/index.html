@@ -1,28 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./assets/styles/main.scss" />
+  <script type="module" src="./assets/scripts/main.js"></script>
+  <title>Descubre Ceuta</title>
+</head>
+<body class="u-bg">
+  <include src="views/header.html"></include>
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <h1 class="c-hero__title"><i class="fas fa-landmark"></i> Ceuta</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+
+  <main>
+    <section class="c-hero" aria-label="Hero">
+      <div class="o-container c-hero__content">
+        <h1 class="c-hero__title">Ceuta, entre el mar y la historia</h1>
+        <p class="c-hero__subtitle">Una ciudad singular donde conviven culturas, naturaleza y patrimonio.</p>
+        <a class="c-button c-button--primary" href="#que-ver">Explorar</a>
+      </div>
+    </section>
+
+
+    <section id="que-ver" class="c-section" data-aos="fade-up">
+      <div class="o-container">
+        <h2 class="c-section__title">Qué ver</h2>
+        <div class="o-grid o-grid--3">
+          <!-- Card ejemplo -->
+          <article class="c-card">
+            <img class="c-card__img" src="assets/images/logo_ceutaXL.png" alt="Murallas Reales de Ceuta"/>
+            <h3 class="c-card__title">Murallas Reales</h3>
+            <p class="c-card__text">Fortificación icónica y foso navegable.</p>
+          </article>
+          <!-- Repetir 3–6 tarjetas -->
+        </div>
+      </div>
+    </section>
+
+
+    <section id="cultura" class="c-section c-section--alt" data-aos="fade-up">
+      <div class="o-container">
+        <h2 class="c-section__title">Cultura & Gastronomía</h2>
+        <ul class="c-list c-list--icons">
+          <li><i class="fas fa-mosque"></i> Convivencia de tradiciones</li>
+          <li><i class="fas fa-utensils"></i> Pescados, pinchitos y dulces árabes</li>
+          <li><i class="fas fa-theater-masks"></i> Festividades locales</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section id="info" class="c-section" data-aos="fade-up">
+      <div class="o-container">
+        <h2 class="c-section__title">Info práctica</h2>
+        <div class="o-grid o-grid--2">
+          <div>
+            <h3>Cómo llegar</h3>
+            <p>Ferry desde Algeciras; conexiones por helicóptero; carretera interior.</p>
+          </div>
+          <div>
+            <h3>Consejos</h3>
+            <p>Clima templado; paseos costeros; respeta normas en recintos históricos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <include src="views/footer.html"></include>
+
+
+</body>
 </html>

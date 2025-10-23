@@ -1,0 +1,125 @@
+@use "../variables" as *;             // aquí deben existir $ipsi-corporate y $ipsi-focus
+@use "../utilities/functions" as *;   // rem()
+@use "../utilities/mixins" as *;          // container(), visually-hidden()
+
+/* Header */
+.c-header {
+  /* altura del header reutilizable por los enlaces */
+  --header-h: clamp(56px, 10vw, 72px);
+  background-color: $ipsi-corporate;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Nav */
+.c-nav {
+  @include container;                 /* mixin de layout */
+  min-height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(16);
+  padding-inline: rem(16);
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__logo {
+    height: clamp(28px, 5vw, 44px);
+    width: auto;
+    display: block;
+  }
+
+  &__toggle {
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: rem(24);
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  /* Menú */
+  &__menu {
+    --gap: clamp(0.5rem, 3vw, 1.25rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    /* móvil: inicialmente oculto (si usas menú desplegable) */
+    display: none;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--header-h);
+    padding-inline: clamp(0.75rem, 2.5vw, 1rem);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: transparent;
+    transition: background-color 160ms ease;
+
+    /* Línea animada en el pie (izq→der) con color de marca de foco */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: $ipsi-masterbrand;          /* subrayado animado */
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 200ms ease;
+    }
+
+    /* HOVER/FOCUS: cambia el FONDO, no el texto */
+    &:hover,
+    &:focus-visible {
+      background-color: $ipsi-focus;
+    }
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    /* Accesibilidad focus */
+    &:focus-visible {
+      outline: 2px solid $ipsi-focus;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+
+  /* Estado abierto en mobile (lo activa tu JS con .c-nav--open) */
+  &--open &__menu {
+    display: flex;
+  }
+}
+
+/* Layout en pantallas medianas+: menú visible en fila */
+@media (min-width: 768px) {
+  .c-nav {
+    &__toggle { display: none; }
+    &__menu {
+      display: flex !important;
+      flex-direction: row;
+      gap: var(--gap);
+      align-items: center;
+    }
+  }
+}

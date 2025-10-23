@@ -1,16 +1,20 @@
-/**
- * Import dependencies from node_modules
- * see commented examples below
- */
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-// import 'some-node-module';
-// import SomeModule from 'some-node-module';
+AOS.init({
+  duration: 1000,  // duración de la animación (ms)
+  once: true       // se anima solo la primera vez que aparece en pantalla
+});
 
-/**
- * Write any other JavaScript below
- */
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.c-nav__toggle');
+  const menu = document.getElementById('nav-menu');
 
-+( function() {
-  const university = "UOC";
-  console.log(`Hello, ${university}!`);
-} )();
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      menu.style.display = expanded ? 'none' : 'flex';
+    });
+  }
+});
