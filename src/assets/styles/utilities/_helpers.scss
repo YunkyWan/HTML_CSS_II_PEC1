@@ -1,9 +1,9 @@
-@use "mixins" as *;
+@use 'mixins' as *;
 
 .u-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .u-hidden {

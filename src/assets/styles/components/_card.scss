@@ -1,0 +1,25 @@
+@use '../variables' as *;
+@use '../utilities/functions' as *;
+
+.c-card {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin: rem(12) rem(16) 0;
+    font-size: rem(20);
+  }
+
+  &__text {
+    margin: rem(8) rem(16) rem(16);
+    color: rgba(0,0,0,.75);
+  }
+}

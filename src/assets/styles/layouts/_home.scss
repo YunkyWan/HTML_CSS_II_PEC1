@@ -1,5 +1,5 @@
-@use "../variables" as *;
-@use "../utilities/functions" as *;
+@use '../variables' as *;
+@use '../utilities/functions' as *;
 
 * { box-sizing: border-box; }
 
@@ -9,10 +9,10 @@ html {
 
 body {
   margin: 0;
-  color: $ipsi-corporate;
   font-family: $font-family-sans-serif;
-  line-height: 1.5;
   font-size: rem(16);
+  line-height: 1.5;
+  color: $ipsi-corporate;
 }
 
 h1, h2, h3 {
@@ -25,17 +25,17 @@ h1, h2, h3 {
 }
 
 .c-section__title {
-  font-size: rem(28);
   margin-bottom: rem(16);
+  font-size: rem(28);
 }
 
 .c-section__title::after {
-  content: "";
   display: block;
   width: rem(48);
   height: rem(4);
-  background: $ipsi-masterbrand;
   margin-top: rem(8);
+  content: '';
+  background: $ipsi-masterbrand;
 }
 
 .c-footer {

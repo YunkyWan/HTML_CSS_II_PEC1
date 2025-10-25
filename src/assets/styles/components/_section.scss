@@ -1,0 +1,20 @@
+@use '../variables' as *;
+@use '../utilities/functions' as *;
+
+.c-section {
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.c-section__title {
+  margin-bottom: rem(16);
+  font-size: rem(28);
+}
+
+.c-section__title::after {
+  display: block;
+  width: rem(48);
+  height: rem(4);
+  margin-top: rem(8);
+  content: '';
+  background: $ipsi-focus;
+}
