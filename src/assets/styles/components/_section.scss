@@ -21,6 +21,7 @@
 }
 
 .c-section--alt {
+  padding-block: clamp(2.5rem, 6vw, 4rem);
   background:
     linear-gradient(
       180deg,
@@ -28,12 +29,11 @@
       rgba(255,255,255,0) 100%
     );
   border-radius: 1rem;
-  padding-block: clamp(2.5rem, 6vw, 4rem);
 }
 
 .c-list {
-  margin: clamp(1rem, 3vw, 1.5rem) 0 0;
   padding: 0;
+  margin: clamp(1rem, 3vw, 1.5rem) 0 0;
   list-style: none;
 
   &--icons {
@@ -43,14 +43,14 @@
     li {
       display: grid;
       grid-template-columns: auto 1fr;
-      align-items: start;
       gap: 0.6rem;
+      align-items: start;
       color: rgba(0,0,0,.85);
     }
 
     i {
-      color: $ipsi-focus;
       margin-top: 0.15rem;
+      color: $ipsi-focus;
     }
   }
 }

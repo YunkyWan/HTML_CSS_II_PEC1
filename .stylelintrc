@@ -10,8 +10,8 @@
     "scss/at-rule-no-unknown": true,
 
     "selector-class-pattern": [
-      "^(c|u)-[a-z0-9]+(?:-[a-z0-9]+)*(__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$",
-      { "resolveNestedSelectors": true, "message": "Usa BEM: c-bloque__elemento--modificador o utilidades u-*" }
+      "^(c|u|o|l)-[a-z0-9]+(?:-[a-z0-9]+)*(__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$",
+      { "resolveNestedSelectors": true, "message": "Usa BEM: c-bloque__elemento--modificador o utilidades u- / o- / l-" }
     ],
 
     "no-descending-specificity": null,
