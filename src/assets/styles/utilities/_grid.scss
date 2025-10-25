@@ -1,0 +1,28 @@
+@use "../utilities/functions" as *;
+
+/* Rejilla responsive genérica */
+.o-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  grid-template-columns: 1fr; /* móvil: 1 columna */
+
+  @media (min-width: 600px) {   /* tablets pequeñas */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @media (min-width: 900px) {   /* tablets/grandes */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (min-width: 1200px) {  /* escritorio */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Alternativa auto-fit por si prefieres “tarjetas fluidas” con ancho mínimo */
+.o-grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* (Opcional) si ya tienes HTML con o-grid--3 y no quieres tocarlo:
+   lo dejamos como alias de la rejilla responsive */
+.o-grid--3 { /* alias para compatibilidad */
+}

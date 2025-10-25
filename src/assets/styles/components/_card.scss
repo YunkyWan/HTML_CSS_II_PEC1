@@ -1,25 +1,61 @@
-@use '../variables' as *;
-@use '../utilities/functions' as *;
+@use "../variables" as *;
+@use "../utilities/functions" as *;
 
 .c-card {
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: #fff;
   border-radius: 0.75rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* Efecto hover */
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
 
   &__img {
     width: 100%;
-    aspect-ratio: 4/3;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  /* Zoom suave en la imagen al hacer hover */
+  &:hover .c-card__img {
+    transform: scale(1.05);
   }
 
   &__title {
-    margin: rem(12) rem(16) 0;
     font-size: rem(20);
+    margin: rem(12) rem(16) 0;
+    font-weight: 600;
+    color: $ipsi-corporate;
   }
 
   &__text {
     margin: rem(8) rem(16) rem(16);
-    color: rgba(0,0,0,.75);
+    color: rgba(0, 0, 0, 0.75);
+    line-height: 1.5;
+  }
+
+  &__tags {
+    margin: rem(8) rem(16) rem(16);
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+    li { margin: 0; }
+  }
+
+  /* Sombra de enfoque accesible */
+  &:focus-within {
+    outline: 3px solid $ipsi-focus;
+    outline-offset: 4px;
   }
 }
